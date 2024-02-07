@@ -427,6 +427,10 @@ Partial Class Form1
         Me.sc2.Text = "Button4"
         Me.sc2.UseVisualStyleBackColor = True
         '
+        'TimerSC
+        '
+        Me.TimerSC.Interval = 200
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
