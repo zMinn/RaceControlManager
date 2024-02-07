@@ -22,6 +22,10 @@ Public Class Form1
         TimerSC.Enabled = False
         PictureBox2.Image = RaceControlManager.My.Resources.red1
         redFlag = True
+        ye1 = False : ye2 = False : ye3 = False : ye4 = False : ye5 = False : ye6 = False : ye7 = False : ye8 = False : ye9 = False : ye10 = False
+        dy1 = False : dy2 = False : dy3 = False : dy4 = False : dy5 = False : dy6 = False : dy7 = False : dy8 = False : dy9 = False : dy10 = False
+        y1.BackColor = Color.White : y2.BackColor = Color.White : y3.BackColor = Color.White : y4.BackColor = Color.White : y5.BackColor = Color.White : y6.BackColor = Color.White : y7.BackColor = Color.White : y8.BackColor = Color.White : y9.BackColor = Color.White : y10.BackColor = Color.White
+        ry1.BackColor = Color.White : ry2.BackColor = Color.White : ry3.BackColor = Color.White : ry4.BackColor = Color.White : ry5.BackColor = Color.White : ry6.BackColor = Color.White : ry7.BackColor = Color.White : ry8.BackColor = Color.White : ry9.BackColor = Color.White : ry10.BackColor = Color.White
     End Sub
     Private Sub TimerRed_Tick(sender As Object, e As EventArgs) Handles TimerRed.Tick
         redState = Not redState
@@ -267,16 +271,25 @@ Public Class Form1
 
     'SC
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles sc1.Click
-        ye1 = False : ye2 = False : ye3 = False : ye4 = False : ye5 = False : ye6 = False : ye7 = False : ye8 = False : ye9 = False : ye10 = False
-        dy1 = False : dy2 = False : dy3 = False : dy4 = False : dy5 = False : dy6 = False : dy7 = False : dy8 = False : dy9 = False : dy10 = False
-        y1.BackColor = Color.White : y2.BackColor = Color.White : y3.BackColor = Color.White : y4.BackColor = Color.White : y5.BackColor = Color.White : y6.BackColor = Color.White : y7.BackColor = Color.White : y8.BackColor = Color.White : y9.BackColor = Color.White : y10.BackColor = Color.White
-        ry1.BackColor = Color.White : ry2.BackColor = Color.White : ry3.BackColor = Color.White : ry4.BackColor = Color.White : ry5.BackColor = Color.White : ry6.BackColor = Color.White : ry7.BackColor = Color.White : ry8.BackColor = Color.White : ry9.BackColor = Color.White : ry10.BackColor = Color.White
-        TimerSC.Enabled = True
-        PictureBox2.Image = RaceControlManager.My.Resources.fcy
+        If redFlag = False Then
+            ye1 = False : ye2 = False : ye3 = False : ye4 = False : ye5 = False : ye6 = False : ye7 = False : ye8 = False : ye9 = False : ye10 = False
+            dy1 = False : dy2 = False : dy3 = False : dy4 = False : dy5 = False : dy6 = False : dy7 = False : dy8 = False : dy9 = False : dy10 = False
+            y1.BackColor = Color.White : y2.BackColor = Color.White : y3.BackColor = Color.White : y4.BackColor = Color.White : y5.BackColor = Color.White : y6.BackColor = Color.White : y7.BackColor = Color.White : y8.BackColor = Color.White : y9.BackColor = Color.White : y10.BackColor = Color.White
+            ry1.BackColor = Color.White : ry2.BackColor = Color.White : ry3.BackColor = Color.White : ry4.BackColor = Color.White : ry5.BackColor = Color.White : ry6.BackColor = Color.White : ry7.BackColor = Color.White : ry8.BackColor = Color.White : ry9.BackColor = Color.White : ry10.BackColor = Color.White
+            TimerSC.Enabled = True
+            PictureBox2.Image = RaceControlManager.My.Resources.fcy
+        End If
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles sc2.Click
-
+        If redFlag = False Then
+            x = 0
+            TimerSC.Enabled = False
+            greenState = True
+            GreenTimer.Enabled = True
+            greenState = 0
+            PictureBox2.Image = RaceControlManager.My.Resources.Layout
+        End If
     End Sub
 
 
@@ -302,11 +315,13 @@ Public Class Form1
     Private Sub TimerYellow_Tick(sender As Object, e As EventArgs) Handles TimerYellow.Tick
         If TimerRed.Enabled = False Then
             If ye1 = True Or ye2 = True Or ye3 = True Or ye4 = True Or ye5 = True Or ye6 = True Or ye7 = True Or ye8 = True Or ye9 = True Or ye10 = True Then
-                yellowState = Not yellowState
-                If yellowState = True Then
-                    PictureBox1.Image = RaceControlManager.My.Resources.Yellow
-                Else
-                    PictureBox1.Image = RaceControlManager.My.Resources.Black
+                If dy1 = False Or dy2 = False Or dy3 = False Or dy4 = False Or dy5 = False Or dy6 = False Or dy7 = False Or dy8 = False Or dy9 = False Or dy10 = False Then
+                    yellowState = Not yellowState
+                    If yellowState = True Then
+                        PictureBox1.Image = RaceControlManager.My.Resources.Yellow
+                    Else
+                        PictureBox1.Image = RaceControlManager.My.Resources.Black
+                    End If
                 End If
             End If
         End If
