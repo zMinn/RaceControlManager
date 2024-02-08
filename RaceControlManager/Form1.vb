@@ -21,6 +21,7 @@ Public Class Form1
         TimerRed.Enabled = True
         TimerSC.Enabled = False
         PictureBox2.Image = RaceControlManager.My.Resources.red1
+        TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " RED FLAG, ALL DRIVERS MUST ENTER THE PIT LANE " & Environment.NewLine)
         redFlag = True
         ye1 = False : ye2 = False : ye3 = False : ye4 = False : ye5 = False : ye6 = False : ye7 = False : ye8 = False : ye9 = False : ye10 = False
         dy1 = False : dy2 = False : dy3 = False : dy4 = False : dy5 = False : dy6 = False : dy7 = False : dy8 = False : dy9 = False : dy10 = False
@@ -41,8 +42,6 @@ Public Class Form1
 
 
 
-
-
     'Yellow Flags
     Private Sub y1_Click(sender As Object, e As EventArgs) Handles y1.Click
         If redFlag = False Then
@@ -50,6 +49,7 @@ Public Class Form1
             If dy1 = True Then dy1 = False : ry1.BackColor = Color.White
             y1.BackColor = Color.Red
             PictureBox2.Image = RaceControlManager.My.Resources.Layout1
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " YELLOW FLAG IN SECTOR 1" & Environment.NewLine)
         End If
     End Sub
     Private Sub y2_Click(sender As Object, e As EventArgs) Handles y2.Click
@@ -58,6 +58,7 @@ Public Class Form1
             If dy2 = True Then dy2 = False : ry2.BackColor = Color.White
             y2.BackColor = Color.Red
             PictureBox2.Image = RaceControlManager.My.Resources.Layout2
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " YELLOW FLAG IN SECTOR 2" & Environment.NewLine)
         End If
     End Sub
     Private Sub y3_Click(sender As Object, e As EventArgs) Handles y3.Click
@@ -66,6 +67,7 @@ Public Class Form1
             If dy3 = True Then dy3 = False : ry3.BackColor = Color.White
             y3.BackColor = Color.Red
             PictureBox2.Image = RaceControlManager.My.Resources.Layout3
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " YELLOW FLAG IN SECTOR 3" & Environment.NewLine)
         End If
     End Sub
     Private Sub y4_Click(sender As Object, e As EventArgs) Handles y4.Click
@@ -74,6 +76,7 @@ Public Class Form1
             If dy4 = True Then dy4 = False : ry4.BackColor = Color.White
             y4.BackColor = Color.Red
             PictureBox2.Image = RaceControlManager.My.Resources.Layout4
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " YELLOW FLAG IN SECTOR 4" & Environment.NewLine)
         End If
     End Sub
     Private Sub y5_Click(sender As Object, e As EventArgs) Handles y5.Click
@@ -82,6 +85,7 @@ Public Class Form1
             If dy5 = True Then dy5 = False : ry5.BackColor = Color.White
             y5.BackColor = Color.Red
             PictureBox2.Image = RaceControlManager.My.Resources.Layout5
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " YELLOW FLAG IN SECTOR 5" & Environment.NewLine)
         End If
     End Sub
     Private Sub y6_Click(sender As Object, e As EventArgs) Handles y6.Click
@@ -90,6 +94,7 @@ Public Class Form1
             If dy6 = True Then dy6 = False : ry6.BackColor = Color.White
             y6.BackColor = Color.Red
             PictureBox2.Image = RaceControlManager.My.Resources.Layout6
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " YELLOW FLAG IN SECTOR 6" & Environment.NewLine)
         End If
     End Sub
     Private Sub y7_Click(sender As Object, e As EventArgs) Handles y7.Click
@@ -98,6 +103,7 @@ Public Class Form1
             If dy7 = True Then dy7 = False : ry7.BackColor = Color.White
             y7.BackColor = Color.Red
             PictureBox2.Image = RaceControlManager.My.Resources.Layout7
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " YELLOW FLAG IN SECTOR 7" & Environment.NewLine)
         End If
     End Sub
     Private Sub y8_Click(sender As Object, e As EventArgs) Handles y8.Click
@@ -106,6 +112,7 @@ Public Class Form1
             If dy8 = True Then dy8 = False : ry8.BackColor = Color.White
             y8.BackColor = Color.Red
             PictureBox2.Image = RaceControlManager.My.Resources.Layout8
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " YELLOW FLAG IN SECTOR 8" & Environment.NewLine)
         End If
     End Sub
     Private Sub y9_Click(sender As Object, e As EventArgs) Handles y9.Click
@@ -114,6 +121,7 @@ Public Class Form1
             If dy9 = True Then dy9 = False : ry9.BackColor = Color.White
             y9.BackColor = Color.Red
             PictureBox2.Image = RaceControlManager.My.Resources.Layout9
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " YELLOW FLAG IN SECTOR 9" & Environment.NewLine)
         End If
     End Sub
     Private Sub y10_Click(sender As Object, e As EventArgs) Handles y10.Click
@@ -122,6 +130,7 @@ Public Class Form1
             If dy10 = True Then dy10 = False : ry10.BackColor = Color.White
             y10.BackColor = Color.Red
             PictureBox2.Image = RaceControlManager.My.Resources.Layout10
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " YELLOW FLAG IN SECTOR 10" & Environment.NewLine)
         End If
     End Sub
 
@@ -130,6 +139,8 @@ Public Class Form1
             dy1 = True
             If ye1 = True Then y1.BackColor = Color.White : ye1 = False
             ry1.BackColor = Color.Red
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " DOUBLE YELLOW FLAG IN SECTOR 1" & Environment.NewLine)
+            PictureBox2.Image = RaceControlManager.My.Resources.Layout1
         End If
     End Sub
     Private Sub ry2_Click(sender As Object, e As EventArgs) Handles ry2.Click
@@ -137,6 +148,8 @@ Public Class Form1
             dy2 = True
             If ye2 = True Then y2.BackColor = Color.White : ye2 = False
             ry2.BackColor = Color.Red
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " DOUBLE YELLOW FLAG IN SECTOR 2" & Environment.NewLine)
+            PictureBox2.Image = RaceControlManager.My.Resources.Layout2
         End If
     End Sub
     Private Sub ry3_Click(sender As Object, e As EventArgs) Handles ry3.Click
@@ -144,6 +157,8 @@ Public Class Form1
             dy3 = True
             If ye3 = True Then y3.BackColor = Color.White : ye3 = False
             ry3.BackColor = Color.Red
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " DOUBLE YELLOW FLAG IN SECTOR 3" & Environment.NewLine)
+            PictureBox2.Image = RaceControlManager.My.Resources.Layout3
         End If
     End Sub
     Private Sub ry4_Click(sender As Object, e As EventArgs) Handles ry4.Click
@@ -151,6 +166,8 @@ Public Class Form1
             dy4 = True
             If ye4 = True Then y4.BackColor = Color.White : ye4 = False
             ry4.BackColor = Color.Red
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " DOUBLE YELLOW FLAG IN SECTOR 4" & Environment.NewLine)
+            PictureBox2.Image = RaceControlManager.My.Resources.Layout4
         End If
     End Sub
     Private Sub ry5_Click(sender As Object, e As EventArgs) Handles ry5.Click
@@ -158,6 +175,8 @@ Public Class Form1
             dy5 = True
             If ye5 = True Then y5.BackColor = Color.White : ye5 = False
             ry5.BackColor = Color.Red
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " DOUBLE YELLOW FLAG IN SECTOR 5" & Environment.NewLine)
+            PictureBox2.Image = RaceControlManager.My.Resources.Layout5
         End If
     End Sub
     Private Sub ry6_Click(sender As Object, e As EventArgs) Handles ry6.Click
@@ -165,6 +184,8 @@ Public Class Form1
             dy6 = True
             If ye6 = True Then y6.BackColor = Color.White : ye6 = False
             ry6.BackColor = Color.Red
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " DOUBLE YELLOW FLAG IN SECTOR 6" & Environment.NewLine)
+            PictureBox2.Image = RaceControlManager.My.Resources.Layout6
         End If
     End Sub
     Private Sub ry7_Click(sender As Object, e As EventArgs) Handles ry7.Click
@@ -172,6 +193,8 @@ Public Class Form1
             dy7 = True
             If ye7 = True Then y7.BackColor = Color.White : ye7 = False
             ry7.BackColor = Color.Red
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " DOUBLE YELLOW FLAG IN SECTOR 7" & Environment.NewLine)
+            PictureBox2.Image = RaceControlManager.My.Resources.Layout7
         End If
     End Sub
     Private Sub ry8_Click(sender As Object, e As EventArgs) Handles ry8.Click
@@ -179,6 +202,8 @@ Public Class Form1
             dy8 = True
             If ye8 = True Then y8.BackColor = Color.White : ye8 = False
             ry8.BackColor = Color.Red
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " DOUBLE YELLOW FLAG IN SECTOR 8" & Environment.NewLine)
+            PictureBox2.Image = RaceControlManager.My.Resources.Layout8
         End If
     End Sub
     Private Sub ry9_Click(sender As Object, e As EventArgs) Handles ry9.Click
@@ -186,6 +211,8 @@ Public Class Form1
             dy9 = True
             If ye9 = True Then y9.BackColor = Color.White : ye9 = False
             ry9.BackColor = Color.Red
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " DOUBLE YELLOW FLAG IN SECTOR 9" & Environment.NewLine)
+            PictureBox2.Image = RaceControlManager.My.Resources.Layout9
         End If
     End Sub
     Private Sub ry10_Click(sender As Object, e As EventArgs) Handles ry10.Click
@@ -193,6 +220,8 @@ Public Class Form1
             dy10 = True
             If ye10 = True Then y10.BackColor = Color.White : ye10 = False
             ry10.BackColor = Color.Red
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " DOUBLE YELLOW FLAG IN SECTOR 10" & Environment.NewLine)
+            PictureBox2.Image = RaceControlManager.My.Resources.Layout10
         End If
     End Sub
 
@@ -202,7 +231,7 @@ Public Class Form1
         greenState = True
         GreenTimer.Enabled = True
         greenState = 0
-
+        TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " CLEAR IN SECTOR 1" & Environment.NewLine)
     End Sub
     Private Sub g2_Click(sender As Object, e As EventArgs) Handles g2.Click
         ye2 = False : dy2 = False : y2.BackColor = Color.White : ry2.BackColor = Color.White
@@ -210,6 +239,7 @@ Public Class Form1
         greenState = True
         GreenTimer.Enabled = True
         greenState = 0
+        TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " CLEAR IN SECTOR 2" & Environment.NewLine)
     End Sub
     Private Sub g3_Click(sender As Object, e As EventArgs) Handles g3.Click
         ye3 = False : dy3 = False : y3.BackColor = Color.White : ry3.BackColor = Color.White
@@ -217,6 +247,7 @@ Public Class Form1
         greenState = True
         GreenTimer.Enabled = True
         greenState = 0
+        TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " CLEAR IN SECTOR 3" & Environment.NewLine)
     End Sub
     Private Sub g4_Click(sender As Object, e As EventArgs) Handles g4.Click
         ye4 = False : dy4 = False : y4.BackColor = Color.White : ry4.BackColor = Color.White
@@ -224,12 +255,14 @@ Public Class Form1
         greenState = True
         GreenTimer.Enabled = True
         greenState = 0
+        TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " CLEAR IN SECTOR 4" & Environment.NewLine)
     End Sub
     Private Sub g5_Click(sender As Object, e As EventArgs) Handles g5.Click
         ye5 = False : dy5 = False : y5.BackColor = Color.White : ry5.BackColor = Color.White
         greenState = True
         GreenTimer.Enabled = True
         greenState = 0
+        TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " CLEAR IN SECTOR 5" & Environment.NewLine)
     End Sub
     Private Sub g6_Click(sender As Object, e As EventArgs) Handles g6.Click
         ye6 = False : dy6 = False : y6.BackColor = Color.White : ry6.BackColor = Color.White
@@ -237,6 +270,7 @@ Public Class Form1
         greenState = True
         GreenTimer.Enabled = True
         greenState = 0
+        TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " CLEAR IN SECTOR 6" & Environment.NewLine)
     End Sub
     Private Sub g7_Click(sender As Object, e As EventArgs) Handles g7.Click
         ye7 = False : dy7 = False : y7.BackColor = Color.White : ry7.BackColor = Color.White
@@ -244,6 +278,7 @@ Public Class Form1
         greenState = True
         GreenTimer.Enabled = True
         greenState = 0
+        TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " CLEAR IN SECTOR 7" & Environment.NewLine)
     End Sub
     Private Sub g8_Click(sender As Object, e As EventArgs) Handles g8.Click
         ye8 = False : dy8 = False : y8.BackColor = Color.White : ry8.BackColor = Color.White
@@ -251,6 +286,7 @@ Public Class Form1
         greenState = True
         GreenTimer.Enabled = True
         greenState = 0
+        TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " CLEAR IN SECTOR 8" & Environment.NewLine)
     End Sub
     Private Sub g9_Click(sender As Object, e As EventArgs) Handles g9.Click
         ye9 = False : dy9 = False : y9.BackColor = Color.White : ry9.BackColor = Color.White
@@ -258,6 +294,7 @@ Public Class Form1
         greenState = True
         GreenTimer.Enabled = True
         greenState = 0
+        TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " CLEAR IN SECTOR 9" & Environment.NewLine)
     End Sub
     Private Sub g10_Click(sender As Object, e As EventArgs) Handles g10.Click
         ye10 = False : dy10 = False : y10.BackColor = Color.White : ry10.BackColor = Color.White
@@ -265,6 +302,7 @@ Public Class Form1
         greenState = True
         GreenTimer.Enabled = True
         greenState = 0
+        TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " CLEAR IN SECTOR 10" & Environment.NewLine)
     End Sub
 
 
@@ -278,6 +316,7 @@ Public Class Form1
             ry1.BackColor = Color.White : ry2.BackColor = Color.White : ry3.BackColor = Color.White : ry4.BackColor = Color.White : ry5.BackColor = Color.White : ry6.BackColor = Color.White : ry7.BackColor = Color.White : ry8.BackColor = Color.White : ry9.BackColor = Color.White : ry10.BackColor = Color.White
             TimerSC.Enabled = True
             PictureBox2.Image = RaceControlManager.My.Resources.fcy
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " SAFETY CAR HAS BEEN DEPLOYED " & Environment.NewLine)
         End If
     End Sub
 
@@ -289,6 +328,7 @@ Public Class Form1
             GreenTimer.Enabled = True
             greenState = 0
             PictureBox2.Image = RaceControlManager.My.Resources.Layout
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " THE SAFETY CAR WILL ENTER THIS LAP " & Environment.NewLine)
         End If
     End Sub
 
@@ -369,6 +409,7 @@ Public Class Form1
         redFlag = False
         TimerRed.Enabled = False
         TimerSC.Enabled = False
+        TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " ALL FLAGS HAVE BEEN REMOVED " & Environment.NewLine)
         PictureBox1.Image = RaceControlManager.My.Resources.Black
         PictureBox2.Image = RaceControlManager.My.Resources.Layout
         ye1 = False : ye2 = False : ye3 = False : ye4 = False : ye5 = False : ye6 = False : ye7 = False : ye8 = False : ye9 = False : ye10 = False

@@ -66,6 +66,7 @@ Partial Class Form1
         Me.sc1 = New System.Windows.Forms.Button()
         Me.sc2 = New System.Windows.Forms.Button()
         Me.TimerSC = New System.Windows.Forms.Timer(Me.components)
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -431,11 +432,21 @@ Partial Class Form1
         '
         Me.TimerSC.Interval = 200
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(12, 544)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(729, 118)
+        Me.TextBox1.TabIndex = 36
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1251, 717)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.sc2)
         Me.Controls.Add(Me.sc1)
         Me.Controls.Add(Me.g10)
@@ -477,6 +488,7 @@ Partial Class Form1
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -522,4 +534,5 @@ Partial Class Form1
     Friend WithEvents sc1 As Button
     Friend WithEvents sc2 As Button
     Friend WithEvents TimerSC As Timer
+    Friend WithEvents TextBox1 As TextBox
 End Class
