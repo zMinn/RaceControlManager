@@ -28,8 +28,6 @@ Partial Class Form1
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TimerRed = New System.Windows.Forms.Timer(Me.components)
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.y1 = New System.Windows.Forms.Button()
         Me.ry1 = New System.Windows.Forms.Button()
         Me.y3 = New System.Windows.Forms.Button()
@@ -67,8 +65,18 @@ Partial Class Form1
         Me.sc2 = New System.Windows.Forms.Button()
         Me.TimerSC = New System.Windows.Forms.Timer(Me.components)
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.startRace = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.startTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'ImageList1
@@ -87,11 +95,11 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(520, 63)
+        Me.Button1.Location = New System.Drawing.Point(434, 30)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(198, 146)
+        Me.Button1.Size = New System.Drawing.Size(125, 85)
         Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Red"
+        Me.Button1.Text = "Red Flag"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'TimerRed
@@ -100,35 +108,16 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(520, 274)
+        Me.Button2.Location = New System.Drawing.Point(500, 377)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(198, 146)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "Remove"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.RaceControlManager.My.Resources.Resources.Layout
-        Me.PictureBox2.Location = New System.Drawing.Point(808, 49)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(400, 314)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 3
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Black
-        Me.PictureBox1.Location = New System.Drawing.Point(42, 63)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(400, 300)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
         'y1
         '
-        Me.y1.Location = New System.Drawing.Point(808, 393)
+        Me.y1.Location = New System.Drawing.Point(6, 359)
         Me.y1.Name = "y1"
         Me.y1.Size = New System.Drawing.Size(31, 30)
         Me.y1.TabIndex = 4
@@ -137,7 +126,7 @@ Partial Class Form1
         '
         'ry1
         '
-        Me.ry1.Location = New System.Drawing.Point(842, 393)
+        Me.ry1.Location = New System.Drawing.Point(40, 359)
         Me.ry1.Name = "ry1"
         Me.ry1.Size = New System.Drawing.Size(31, 30)
         Me.ry1.TabIndex = 5
@@ -146,7 +135,7 @@ Partial Class Form1
         '
         'y3
         '
-        Me.y3.Location = New System.Drawing.Point(972, 393)
+        Me.y3.Location = New System.Drawing.Point(170, 359)
         Me.y3.Name = "y3"
         Me.y3.Size = New System.Drawing.Size(31, 30)
         Me.y3.TabIndex = 6
@@ -155,7 +144,7 @@ Partial Class Form1
         '
         'ry3
         '
-        Me.ry3.Location = New System.Drawing.Point(1006, 393)
+        Me.ry3.Location = New System.Drawing.Point(204, 359)
         Me.ry3.Name = "ry3"
         Me.ry3.Size = New System.Drawing.Size(31, 30)
         Me.ry3.TabIndex = 7
@@ -164,7 +153,7 @@ Partial Class Form1
         '
         'y4
         '
-        Me.y4.Location = New System.Drawing.Point(1054, 393)
+        Me.y4.Location = New System.Drawing.Point(252, 359)
         Me.y4.Name = "y4"
         Me.y4.Size = New System.Drawing.Size(31, 30)
         Me.y4.TabIndex = 8
@@ -173,7 +162,7 @@ Partial Class Form1
         '
         'y2
         '
-        Me.y2.Location = New System.Drawing.Point(890, 393)
+        Me.y2.Location = New System.Drawing.Point(88, 359)
         Me.y2.Name = "y2"
         Me.y2.Size = New System.Drawing.Size(31, 30)
         Me.y2.TabIndex = 9
@@ -182,7 +171,7 @@ Partial Class Form1
         '
         'ry4
         '
-        Me.ry4.Location = New System.Drawing.Point(1088, 393)
+        Me.ry4.Location = New System.Drawing.Point(286, 359)
         Me.ry4.Name = "ry4"
         Me.ry4.Size = New System.Drawing.Size(31, 30)
         Me.ry4.TabIndex = 10
@@ -191,7 +180,7 @@ Partial Class Form1
         '
         'ry2
         '
-        Me.ry2.Location = New System.Drawing.Point(924, 393)
+        Me.ry2.Location = New System.Drawing.Point(122, 359)
         Me.ry2.Name = "ry2"
         Me.ry2.Size = New System.Drawing.Size(31, 30)
         Me.ry2.TabIndex = 11
@@ -200,7 +189,7 @@ Partial Class Form1
         '
         'y5
         '
-        Me.y5.Location = New System.Drawing.Point(1136, 393)
+        Me.y5.Location = New System.Drawing.Point(334, 359)
         Me.y5.Name = "y5"
         Me.y5.Size = New System.Drawing.Size(31, 30)
         Me.y5.TabIndex = 12
@@ -209,7 +198,7 @@ Partial Class Form1
         '
         'ry5
         '
-        Me.ry5.Location = New System.Drawing.Point(1170, 393)
+        Me.ry5.Location = New System.Drawing.Point(368, 359)
         Me.ry5.Name = "ry5"
         Me.ry5.Size = New System.Drawing.Size(31, 30)
         Me.ry5.TabIndex = 13
@@ -218,7 +207,7 @@ Partial Class Form1
         '
         'ry10
         '
-        Me.ry10.Location = New System.Drawing.Point(1170, 468)
+        Me.ry10.Location = New System.Drawing.Point(368, 434)
         Me.ry10.Name = "ry10"
         Me.ry10.Size = New System.Drawing.Size(31, 30)
         Me.ry10.TabIndex = 23
@@ -227,7 +216,7 @@ Partial Class Form1
         '
         'y10
         '
-        Me.y10.Location = New System.Drawing.Point(1136, 468)
+        Me.y10.Location = New System.Drawing.Point(334, 434)
         Me.y10.Name = "y10"
         Me.y10.Size = New System.Drawing.Size(31, 30)
         Me.y10.TabIndex = 22
@@ -236,7 +225,7 @@ Partial Class Form1
         '
         'ry7
         '
-        Me.ry7.Location = New System.Drawing.Point(924, 468)
+        Me.ry7.Location = New System.Drawing.Point(122, 434)
         Me.ry7.Name = "ry7"
         Me.ry7.Size = New System.Drawing.Size(31, 30)
         Me.ry7.TabIndex = 21
@@ -245,7 +234,7 @@ Partial Class Form1
         '
         'ry9
         '
-        Me.ry9.Location = New System.Drawing.Point(1088, 468)
+        Me.ry9.Location = New System.Drawing.Point(286, 434)
         Me.ry9.Name = "ry9"
         Me.ry9.Size = New System.Drawing.Size(31, 30)
         Me.ry9.TabIndex = 20
@@ -254,7 +243,7 @@ Partial Class Form1
         '
         'y7
         '
-        Me.y7.Location = New System.Drawing.Point(890, 468)
+        Me.y7.Location = New System.Drawing.Point(88, 434)
         Me.y7.Name = "y7"
         Me.y7.Size = New System.Drawing.Size(31, 30)
         Me.y7.TabIndex = 19
@@ -263,7 +252,7 @@ Partial Class Form1
         '
         'y9
         '
-        Me.y9.Location = New System.Drawing.Point(1054, 468)
+        Me.y9.Location = New System.Drawing.Point(252, 434)
         Me.y9.Name = "y9"
         Me.y9.Size = New System.Drawing.Size(31, 30)
         Me.y9.TabIndex = 18
@@ -272,7 +261,7 @@ Partial Class Form1
         '
         'ry8
         '
-        Me.ry8.Location = New System.Drawing.Point(1006, 468)
+        Me.ry8.Location = New System.Drawing.Point(204, 434)
         Me.ry8.Name = "ry8"
         Me.ry8.Size = New System.Drawing.Size(31, 30)
         Me.ry8.TabIndex = 17
@@ -281,7 +270,7 @@ Partial Class Form1
         '
         'y8
         '
-        Me.y8.Location = New System.Drawing.Point(972, 468)
+        Me.y8.Location = New System.Drawing.Point(170, 434)
         Me.y8.Name = "y8"
         Me.y8.Size = New System.Drawing.Size(31, 30)
         Me.y8.TabIndex = 16
@@ -290,7 +279,7 @@ Partial Class Form1
         '
         'ry6
         '
-        Me.ry6.Location = New System.Drawing.Point(842, 468)
+        Me.ry6.Location = New System.Drawing.Point(40, 434)
         Me.ry6.Name = "ry6"
         Me.ry6.Size = New System.Drawing.Size(31, 30)
         Me.ry6.TabIndex = 15
@@ -299,7 +288,7 @@ Partial Class Form1
         '
         'y6
         '
-        Me.y6.Location = New System.Drawing.Point(808, 468)
+        Me.y6.Location = New System.Drawing.Point(6, 434)
         Me.y6.Name = "y6"
         Me.y6.Size = New System.Drawing.Size(31, 30)
         Me.y6.TabIndex = 14
@@ -318,7 +307,7 @@ Partial Class Form1
         '
         'g
         '
-        Me.g.Location = New System.Drawing.Point(808, 424)
+        Me.g.Location = New System.Drawing.Point(6, 390)
         Me.g.Name = "g"
         Me.g.Size = New System.Drawing.Size(65, 30)
         Me.g.TabIndex = 24
@@ -327,7 +316,7 @@ Partial Class Form1
         '
         'g2
         '
-        Me.g2.Location = New System.Drawing.Point(890, 424)
+        Me.g2.Location = New System.Drawing.Point(88, 390)
         Me.g2.Name = "g2"
         Me.g2.Size = New System.Drawing.Size(65, 30)
         Me.g2.TabIndex = 25
@@ -336,7 +325,7 @@ Partial Class Form1
         '
         'g3
         '
-        Me.g3.Location = New System.Drawing.Point(972, 424)
+        Me.g3.Location = New System.Drawing.Point(170, 390)
         Me.g3.Name = "g3"
         Me.g3.Size = New System.Drawing.Size(65, 30)
         Me.g3.TabIndex = 26
@@ -345,7 +334,7 @@ Partial Class Form1
         '
         'g4
         '
-        Me.g4.Location = New System.Drawing.Point(1054, 424)
+        Me.g4.Location = New System.Drawing.Point(252, 390)
         Me.g4.Name = "g4"
         Me.g4.Size = New System.Drawing.Size(65, 30)
         Me.g4.TabIndex = 27
@@ -354,7 +343,7 @@ Partial Class Form1
         '
         'g5
         '
-        Me.g5.Location = New System.Drawing.Point(1136, 424)
+        Me.g5.Location = New System.Drawing.Point(334, 390)
         Me.g5.Name = "g5"
         Me.g5.Size = New System.Drawing.Size(65, 30)
         Me.g5.TabIndex = 28
@@ -363,7 +352,7 @@ Partial Class Form1
         '
         'g10
         '
-        Me.g10.Location = New System.Drawing.Point(1136, 499)
+        Me.g10.Location = New System.Drawing.Point(334, 465)
         Me.g10.Name = "g10"
         Me.g10.Size = New System.Drawing.Size(65, 30)
         Me.g10.TabIndex = 33
@@ -372,7 +361,7 @@ Partial Class Form1
         '
         'g9
         '
-        Me.g9.Location = New System.Drawing.Point(1054, 499)
+        Me.g9.Location = New System.Drawing.Point(252, 465)
         Me.g9.Name = "g9"
         Me.g9.Size = New System.Drawing.Size(65, 30)
         Me.g9.TabIndex = 32
@@ -381,7 +370,7 @@ Partial Class Form1
         '
         'g8
         '
-        Me.g8.Location = New System.Drawing.Point(972, 499)
+        Me.g8.Location = New System.Drawing.Point(170, 465)
         Me.g8.Name = "g8"
         Me.g8.Size = New System.Drawing.Size(65, 30)
         Me.g8.TabIndex = 31
@@ -390,7 +379,7 @@ Partial Class Form1
         '
         'g7
         '
-        Me.g7.Location = New System.Drawing.Point(890, 499)
+        Me.g7.Location = New System.Drawing.Point(88, 465)
         Me.g7.Name = "g7"
         Me.g7.Size = New System.Drawing.Size(65, 30)
         Me.g7.TabIndex = 30
@@ -399,7 +388,7 @@ Partial Class Form1
         '
         'g6
         '
-        Me.g6.Location = New System.Drawing.Point(808, 499)
+        Me.g6.Location = New System.Drawing.Point(6, 465)
         Me.g6.Name = "g6"
         Me.g6.Size = New System.Drawing.Size(65, 30)
         Me.g6.TabIndex = 29
@@ -412,20 +401,20 @@ Partial Class Form1
         '
         'sc1
         '
-        Me.sc1.Location = New System.Drawing.Point(105, 400)
+        Me.sc1.Location = New System.Drawing.Point(651, 30)
         Me.sc1.Name = "sc1"
-        Me.sc1.Size = New System.Drawing.Size(75, 23)
+        Me.sc1.Size = New System.Drawing.Size(125, 85)
         Me.sc1.TabIndex = 34
-        Me.sc1.Text = "scon"
+        Me.sc1.Text = "SC"
         Me.sc1.UseVisualStyleBackColor = True
         '
         'sc2
         '
-        Me.sc2.Location = New System.Drawing.Point(216, 400)
+        Me.sc2.Location = New System.Drawing.Point(651, 121)
         Me.sc2.Name = "sc2"
-        Me.sc2.Size = New System.Drawing.Size(75, 23)
+        Me.sc2.Size = New System.Drawing.Size(125, 85)
         Me.sc2.TabIndex = 35
-        Me.sc2.Text = "Button4"
+        Me.sc2.Text = "Remove SC"
         Me.sc2.UseVisualStyleBackColor = True
         '
         'TimerSC
@@ -434,59 +423,130 @@ Partial Class Form1
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(12, 544)
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(16, 557)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(729, 118)
+        Me.TextBox1.Size = New System.Drawing.Size(1172, 118)
         Me.TextBox1.TabIndex = 36
+        '
+        'startRace
+        '
+        Me.startRace.Location = New System.Drawing.Point(434, 121)
+        Me.startRace.Name = "startRace"
+        Me.startRace.Size = New System.Drawing.Size(125, 85)
+        Me.startRace.TabIndex = 37
+        Me.startRace.Text = "Start Race"
+        Me.startRace.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.PictureBox2)
+        Me.GroupBox1.Controls.Add(Me.y1)
+        Me.GroupBox1.Controls.Add(Me.ry1)
+        Me.GroupBox1.Controls.Add(Me.y3)
+        Me.GroupBox1.Controls.Add(Me.ry3)
+        Me.GroupBox1.Controls.Add(Me.g10)
+        Me.GroupBox1.Controls.Add(Me.y4)
+        Me.GroupBox1.Controls.Add(Me.g9)
+        Me.GroupBox1.Controls.Add(Me.y2)
+        Me.GroupBox1.Controls.Add(Me.g8)
+        Me.GroupBox1.Controls.Add(Me.ry4)
+        Me.GroupBox1.Controls.Add(Me.g7)
+        Me.GroupBox1.Controls.Add(Me.ry2)
+        Me.GroupBox1.Controls.Add(Me.g6)
+        Me.GroupBox1.Controls.Add(Me.y5)
+        Me.GroupBox1.Controls.Add(Me.g5)
+        Me.GroupBox1.Controls.Add(Me.ry5)
+        Me.GroupBox1.Controls.Add(Me.g4)
+        Me.GroupBox1.Controls.Add(Me.y6)
+        Me.GroupBox1.Controls.Add(Me.g3)
+        Me.GroupBox1.Controls.Add(Me.ry6)
+        Me.GroupBox1.Controls.Add(Me.g2)
+        Me.GroupBox1.Controls.Add(Me.y8)
+        Me.GroupBox1.Controls.Add(Me.g)
+        Me.GroupBox1.Controls.Add(Me.ry8)
+        Me.GroupBox1.Controls.Add(Me.ry10)
+        Me.GroupBox1.Controls.Add(Me.y9)
+        Me.GroupBox1.Controls.Add(Me.y10)
+        Me.GroupBox1.Controls.Add(Me.y7)
+        Me.GroupBox1.Controls.Add(Me.ry7)
+        Me.GroupBox1.Controls.Add(Me.ry9)
+        Me.GroupBox1.Location = New System.Drawing.Point(782, 11)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(413, 506)
+        Me.GroupBox1.TabIndex = 38
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Yellow Flag Panel"
+        '
+        'startTimer
+        '
+        Me.startTimer.Interval = 1000
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.RaceControlManager.My.Resources.Resources.Lights0
+        Me.PictureBox3.Location = New System.Drawing.Point(12, 339)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(400, 142)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 39
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.RaceControlManager.My.Resources.Resources.Layout
+        Me.PictureBox2.Location = New System.Drawing.Point(6, 15)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(400, 314)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 3
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Black
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 19)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(400, 300)
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.PictureBox1)
+        Me.GroupBox2.Controls.Add(Me.PictureBox3)
+        Me.GroupBox2.Location = New System.Drawing.Point(5, 12)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(422, 494)
+        Me.GroupBox2.TabIndex = 40
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Light Panels"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1251, 717)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.startRace)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.sc2)
         Me.Controls.Add(Me.sc1)
-        Me.Controls.Add(Me.g10)
-        Me.Controls.Add(Me.g9)
-        Me.Controls.Add(Me.g8)
-        Me.Controls.Add(Me.g7)
-        Me.Controls.Add(Me.g6)
-        Me.Controls.Add(Me.g5)
-        Me.Controls.Add(Me.g4)
-        Me.Controls.Add(Me.g3)
-        Me.Controls.Add(Me.g2)
-        Me.Controls.Add(Me.g)
-        Me.Controls.Add(Me.ry10)
-        Me.Controls.Add(Me.y10)
-        Me.Controls.Add(Me.ry7)
-        Me.Controls.Add(Me.ry9)
-        Me.Controls.Add(Me.y7)
-        Me.Controls.Add(Me.y9)
-        Me.Controls.Add(Me.ry8)
-        Me.Controls.Add(Me.y8)
-        Me.Controls.Add(Me.ry6)
-        Me.Controls.Add(Me.y6)
-        Me.Controls.Add(Me.ry5)
-        Me.Controls.Add(Me.y5)
-        Me.Controls.Add(Me.ry2)
-        Me.Controls.Add(Me.ry4)
-        Me.Controls.Add(Me.y2)
-        Me.Controls.Add(Me.y4)
-        Me.Controls.Add(Me.ry3)
-        Me.Controls.Add(Me.y3)
-        Me.Controls.Add(Me.ry1)
-        Me.Controls.Add(Me.y1)
-        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Name = "Form1"
         Me.Text = "Form1"
+        Me.GroupBox1.ResumeLayout(False)
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -535,4 +595,9 @@ Partial Class Form1
     Friend WithEvents sc2 As Button
     Friend WithEvents TimerSC As Timer
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents startRace As Button
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents startTimer As Timer
+    Friend WithEvents GroupBox2 As GroupBox
 End Class

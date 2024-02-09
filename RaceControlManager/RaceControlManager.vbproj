@@ -216,5 +216,23 @@
   <ItemGroup>
     <None Include="Resources\red.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lights0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lights1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lights2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lights3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lights4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lights5.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -6,7 +6,7 @@ Public Class Form1
     Dim dyellowState As Boolean
     Dim scState As Boolean
     Dim redFlag As Boolean
-    Dim flag, greenState, x
+    Dim flag, greenState, x, pic
     Dim ye1, ye2, ye3, ye4, ye5, ye6, ye7, ye8, ye9, ye10 As Boolean
     Dim dy1, dy2, dy3, dy4, dy5, dy6, dy7, dy8, dy9, dy10 As Boolean
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -331,15 +331,10 @@ Public Class Form1
             TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " THE SAFETY CAR WILL ENTER THIS LAP " & Environment.NewLine)
         End If
     End Sub
-
-
-
-
-
-
-
-
-
+    Private Sub startRace_Click(sender As Object, e As EventArgs) Handles startRace.Click
+        pic = 1
+        startTimer.Enabled = True
+    End Sub
     Private Sub TimerSC_Tick(sender As Object, e As EventArgs) Handles TimerSC.Tick
         If redFlag = False Then
             scState = Not scState
@@ -350,8 +345,35 @@ Public Class Form1
             End If
         End If
     End Sub
+    Private Sub startTimer_Tick(sender As Object, e As EventArgs) Handles startTimer.Tick
+        If pic = 0 Then
+            PictureBox3.Image = RaceControlManager.My.Resources.Lights0
+            pic += 1
+        ElseIf pic = 1 Then
+            PictureBox3.Image = RaceControlManager.My.Resources.Lights1
+            pic += 1
+        ElseIf pic = 2 Then
+            PictureBox3.Image = RaceControlManager.My.Resources.Lights2
+            pic += 1
+        ElseIf pic = 3 Then
+            PictureBox3.Image = RaceControlManager.My.Resources.Lights3
+            pic += 1
+        ElseIf pic = 4 Then
+            PictureBox3.Image = RaceControlManager.My.Resources.Lights4
+            pic += 1
+        ElseIf pic = 5 Then
+            PictureBox3.Image = RaceControlManager.My.Resources.Lights5
+            pic += 1
+        ElseIf pic = 6 Then
+            Threading.Thread.Sleep(Rnd() * 2000)
+            PictureBox3.Image = RaceControlManager.My.Resources.Lights0
+            TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " GREEN FLAG" & Environment.NewLine)
+            startTimer.Enabled = False
+            GreenTimer.Enabled = True
+        End If
 
 
+    End Sub
     Private Sub TimerYellow_Tick(sender As Object, e As EventArgs) Handles TimerYellow.Tick
         If TimerRed.Enabled = False Then
             If ye1 = True Or ye2 = True Or ye3 = True Or ye4 = True Or ye5 = True Or ye6 = True Or ye7 = True Or ye8 = True Or ye9 = True Or ye10 = True Then
