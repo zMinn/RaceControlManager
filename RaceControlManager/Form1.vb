@@ -12,6 +12,7 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ye1 = False : ye2 = False : ye3 = False : ye4 = False : ye5 = False : ye6 = False : ye7 = False : ye8 = False : ye9 = False : ye10 = False
         dy1 = False : dy2 = False : dy3 = False : dy4 = False : dy5 = False : dy6 = False : dy7 = False : dy8 = False : dy9 = False : dy10 = False
+        SerialPort1.Open()
     End Sub
 
     'Flag Handlng 
@@ -229,6 +230,7 @@ Public Class Form1
         ye1 = False : dy1 = False : y1.BackColor = Color.White : ry1.BackColor = Color.White
         x = 0
         greenState = True
+        SerialPort1.Write("z")
         GreenTimer.Enabled = True
         greenState = 0
         TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " CLEAR IN SECTOR 1" & Environment.NewLine)
@@ -352,22 +354,28 @@ Public Class Form1
         ElseIf pic = 1 Then
             PictureBox3.Image = RaceControlManager.My.Resources.Lights1
             pic += 1
+            SerialPort1.Write("a")
         ElseIf pic = 2 Then
             PictureBox3.Image = RaceControlManager.My.Resources.Lights2
             pic += 1
+            SerialPort1.Write("b")
         ElseIf pic = 3 Then
             PictureBox3.Image = RaceControlManager.My.Resources.Lights3
             pic += 1
+            SerialPort1.Write("c")
         ElseIf pic = 4 Then
             PictureBox3.Image = RaceControlManager.My.Resources.Lights4
             pic += 1
+            SerialPort1.Write("d")
         ElseIf pic = 5 Then
             PictureBox3.Image = RaceControlManager.My.Resources.Lights5
             pic += 1
+            SerialPort1.Write("e")
         ElseIf pic = 6 Then
             Threading.Thread.Sleep(Rnd() * 2000)
             PictureBox3.Image = RaceControlManager.My.Resources.Lights0
             TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " GREEN FLAG" & Environment.NewLine)
+            SerialPort1.Write("f")
             startTimer.Enabled = False
             GreenTimer.Enabled = True
         End If
@@ -381,8 +389,29 @@ Public Class Form1
                     yellowState = Not yellowState
                     If yellowState = True Then
                         PictureBox1.Image = RaceControlManager.My.Resources.Yellow
+                        If ye1 = True Then SerialPort1.Write("g")
+                        If ye2 = True Then SerialPort1.Write("h")
+                        If ye3 = True Then SerialPort1.Write("i")
+                        If ye4 = True Then SerialPort1.Write("j")
+                        If ye5 = True Then SerialPort1.Write("k")
+                        If ye6 = True Then SerialPort1.Write("l")
+                        If ye7 = True Then SerialPort1.Write("m")
+                        If ye8 = True Then SerialPort1.Write("n")
+                        If ye9 = True Then SerialPort1.Write("o")
+                        If ye10 = True Then SerialPort1.Write("p")
+
                     Else
                         PictureBox1.Image = RaceControlManager.My.Resources.Black
+                        If ye1 = True Then SerialPort1.Write("g")
+                        If ye2 = True Then SerialPort1.Write("h")
+                        If ye3 = True Then SerialPort1.Write("i")
+                        If ye4 = True Then SerialPort1.Write("j")
+                        If ye5 = True Then SerialPort1.Write("k")
+                        If ye6 = True Then SerialPort1.Write("l")
+                        If ye7 = True Then SerialPort1.Write("m")
+                        If ye8 = True Then SerialPort1.Write("n")
+                        If ye9 = True Then SerialPort1.Write("o")
+                        If ye10 = True Then SerialPort1.Write("p")
                     End If
                 End If
             End If
@@ -394,8 +423,28 @@ Public Class Form1
                 dyellowState = Not dyellowState
                 If dyellowState = True Then
                     PictureBox1.Image = RaceControlManager.My.Resources.DoubleYellow1
+                    If dy1 = True Then SerialPort1.Write("g")
+                    If dy2 = True Then SerialPort1.Write("h")
+                    If dy3 = True Then SerialPort1.Write("i")
+                    If dy4 = True Then SerialPort1.Write("j")
+                    If dy5 = True Then SerialPort1.Write("k")
+                    If dy6 = True Then SerialPort1.Write("l")
+                    If dy7 = True Then SerialPort1.Write("m")
+                    If dy8 = True Then SerialPort1.Write("n")
+                    If dy9 = True Then SerialPort1.Write("o")
+                    If dy10 = True Then SerialPort1.Write("p")
                 Else
                     PictureBox1.Image = RaceControlManager.My.Resources.DoubleYellow2
+                    If dy1 = True Then SerialPort1.Write("g")
+                    If dy2 = True Then SerialPort1.Write("h")
+                    If dy3 = True Then SerialPort1.Write("i")
+                    If dy4 = True Then SerialPort1.Write("j")
+                    If dy5 = True Then SerialPort1.Write("k")
+                    If dy6 = True Then SerialPort1.Write("l")
+                    If dy7 = True Then SerialPort1.Write("m")
+                    If dy8 = True Then SerialPort1.Write("n")
+                    If dy9 = True Then SerialPort1.Write("o")
+                    If dy10 = True Then SerialPort1.Write("p")
                 End If
             End If
         End If
@@ -403,6 +452,7 @@ Public Class Form1
     Private Sub GreenTimer_Tick(sender As Object, e As EventArgs) Handles GreenTimer.Tick
         If redFlag = False Then
             If ye1 = False And ye2 = False And ye3 = False And ye4 = False And ye5 = False And ye6 = False And ye7 = False And ye8 = False And ye9 = False And ye10 = False And dy1 = False And dy2 = False And dy3 = False And dy4 = False And dy5 = False And dy6 = False And dy7 = False And dy8 = False And dy9 = False And dy10 = False Then
+
                 PictureBox2.Image = RaceControlManager.My.Resources.Layout
                 greenState = Not greenState
                 If x = 20 Then
@@ -434,6 +484,7 @@ Public Class Form1
         TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " ALL FLAGS HAVE BEEN REMOVED " & Environment.NewLine)
         PictureBox1.Image = RaceControlManager.My.Resources.Black
         PictureBox2.Image = RaceControlManager.My.Resources.Layout
+
         ye1 = False : ye2 = False : ye3 = False : ye4 = False : ye5 = False : ye6 = False : ye7 = False : ye8 = False : ye9 = False : ye10 = False
         dy1 = False : dy2 = False : dy3 = False : dy4 = False : dy5 = False : dy6 = False : dy7 = False : dy8 = False : dy9 = False : dy10 = False
         y1.BackColor = Color.White : y2.BackColor = Color.White : y3.BackColor = Color.White : y4.BackColor = Color.White : y5.BackColor = Color.White : y6.BackColor = Color.White : y7.BackColor = Color.White : y8.BackColor = Color.White : y9.BackColor = Color.White : y10.BackColor = Color.White
