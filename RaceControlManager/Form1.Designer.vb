@@ -73,6 +73,9 @@ Partial Class Form1
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,7 +99,7 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(434, 30)
+        Me.Button1.Location = New System.Drawing.Point(434, 50)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(125, 85)
         Me.Button1.TabIndex = 1
@@ -109,7 +112,7 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(500, 377)
+        Me.Button2.Location = New System.Drawing.Point(500, 397)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(198, 146)
         Me.Button2.TabIndex = 2
@@ -402,7 +405,7 @@ Partial Class Form1
         '
         'sc1
         '
-        Me.sc1.Location = New System.Drawing.Point(651, 30)
+        Me.sc1.Location = New System.Drawing.Point(651, 50)
         Me.sc1.Name = "sc1"
         Me.sc1.Size = New System.Drawing.Size(125, 85)
         Me.sc1.TabIndex = 34
@@ -411,7 +414,7 @@ Partial Class Form1
         '
         'sc2
         '
-        Me.sc2.Location = New System.Drawing.Point(651, 121)
+        Me.sc2.Location = New System.Drawing.Point(651, 141)
         Me.sc2.Name = "sc2"
         Me.sc2.Size = New System.Drawing.Size(125, 85)
         Me.sc2.TabIndex = 35
@@ -437,7 +440,7 @@ Partial Class Form1
         '
         'startRace
         '
-        Me.startRace.Location = New System.Drawing.Point(434, 121)
+        Me.startRace.Location = New System.Drawing.Point(434, 141)
         Me.startRace.Name = "startRace"
         Me.startRace.Size = New System.Drawing.Size(125, 85)
         Me.startRace.TabIndex = 37
@@ -477,7 +480,7 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.y7)
         Me.GroupBox1.Controls.Add(Me.ry7)
         Me.GroupBox1.Controls.Add(Me.ry9)
-        Me.GroupBox1.Location = New System.Drawing.Point(782, 11)
+        Me.GroupBox1.Location = New System.Drawing.Point(782, 31)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(413, 506)
         Me.GroupBox1.TabIndex = 38
@@ -521,7 +524,7 @@ Partial Class Form1
         '
         Me.GroupBox2.Controls.Add(Me.PictureBox1)
         Me.GroupBox2.Controls.Add(Me.PictureBox3)
-        Me.GroupBox2.Location = New System.Drawing.Point(5, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(5, 32)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(422, 494)
         Me.GroupBox2.TabIndex = 40
@@ -532,11 +535,40 @@ Partial Class Form1
         '
         Me.SerialPort1.PortName = "COM3"
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(135, 5)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(43, 23)
+        Me.Button3.TabIndex = 42
+        Me.Button3.Text = "Open"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(9, 6)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 43
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(184, 5)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(42, 23)
+        Me.Button4.TabIndex = 44
+        Me.Button4.Text = "Close"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1251, 717)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.startRace)
@@ -545,6 +577,7 @@ Partial Class Form1
         Me.Controls.Add(Me.sc1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
+        Me.HelpButton = True
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.GroupBox1.ResumeLayout(False)
@@ -606,4 +639,7 @@ Partial Class Form1
     Friend WithEvents startTimer As Timer
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents SerialPort1 As IO.Ports.SerialPort
+    Friend WithEvents Button3 As Button
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Button4 As Button
 End Class

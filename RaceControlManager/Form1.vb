@@ -1,4 +1,6 @@
 ﻿Imports System.Diagnostics.Eventing.Reader
+Imports Microsoft.VisualBasic.Devices
+Imports System.IO
 
 Public Class Form1
     Dim redState As Boolean
@@ -7,14 +9,37 @@ Public Class Form1
     Dim scState As Boolean
     Dim redFlag As Boolean
     Dim flag, greenState, x, pic
+    Dim sp As Boolean = False
     Dim ye1, ye2, ye3, ye4, ye5, ye6, ye7, ye8, ye9, ye10 As Boolean
     Dim dy1, dy2, dy3, dy4, dy5, dy6, dy7, dy8, dy9, dy10 As Boolean
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ye1 = False : ye2 = False : ye3 = False : ye4 = False : ye5 = False : ye6 = False : ye7 = False : ye8 = False : ye9 = False : ye10 = False
         dy1 = False : dy2 = False : dy3 = False : dy4 = False : dy5 = False : dy6 = False : dy7 = False : dy8 = False : dy9 = False : dy10 = False
-        SerialPort1.Open()
+        For Each sp As String In My.Computer.Ports.SerialPortNames
+            ComboBox1.Items.Add(sp)
+        Next
     End Sub
-
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        SerialPort1.PortName = ComboBox1.SelectedItem.ToString
+    End Sub
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+        Try
+            SerialPort1.Open()
+            sp = True
+            MsgBox("Connected!")
+        Catch
+            MsgBox("Error connecting!")
+        End Try
+    End Sub
+    Private Sub Button4_Click_1(sender As Object, e As EventArgs) Handles Button4.Click
+        Try
+            SerialPort1.Close()
+            sp = False
+            MsgBox("Disconnected!")
+        Catch
+            MsgBox("Error disconnecting!")
+        End Try
+    End Sub
     'Flag Handlng 
     'Red Flag
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -230,7 +255,7 @@ Public Class Form1
         ye1 = False : dy1 = False : y1.BackColor = Color.White : ry1.BackColor = Color.White
         x = 0
         greenState = True
-        SerialPort1.Write("z")
+        If sp = True Then SerialPort1.Write("z")
         GreenTimer.Enabled = True
         greenState = 0
         TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " CLEAR IN SECTOR 1" & Environment.NewLine)
@@ -354,28 +379,29 @@ Public Class Form1
         ElseIf pic = 1 Then
             PictureBox3.Image = RaceControlManager.My.Resources.Lights1
             pic += 1
-            SerialPort1.Write("a")
+
+            If sp = True Then SerialPort1.Write("a")
         ElseIf pic = 2 Then
             PictureBox3.Image = RaceControlManager.My.Resources.Lights2
             pic += 1
-            SerialPort1.Write("b")
+            If sp = True Then SerialPort1.Write("b")
         ElseIf pic = 3 Then
             PictureBox3.Image = RaceControlManager.My.Resources.Lights3
             pic += 1
-            SerialPort1.Write("c")
+            If sp = True Then SerialPort1.Write("c")
         ElseIf pic = 4 Then
             PictureBox3.Image = RaceControlManager.My.Resources.Lights4
             pic += 1
-            SerialPort1.Write("d")
+            If sp = True Then SerialPort1.Write("d")
         ElseIf pic = 5 Then
             PictureBox3.Image = RaceControlManager.My.Resources.Lights5
             pic += 1
-            SerialPort1.Write("e")
+            If sp = True Then SerialPort1.Write("e")
         ElseIf pic = 6 Then
             Threading.Thread.Sleep(Rnd() * 2000)
             PictureBox3.Image = RaceControlManager.My.Resources.Lights0
             TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " GREEN FLAG" & Environment.NewLine)
-            SerialPort1.Write("f")
+            If sp = True Then SerialPort1.Write("f")
             startTimer.Enabled = False
             GreenTimer.Enabled = True
         End If
@@ -389,31 +415,31 @@ Public Class Form1
                     yellowState = Not yellowState
                     If yellowState = True Then
                         PictureBox1.Image = RaceControlManager.My.Resources.Yellow
-                        If ye1 = True Then SerialPort1.Write("g")
-                        If ye2 = True Then SerialPort1.Write("h")
-                        If ye3 = True Then SerialPort1.Write("i")
-                        If ye4 = True Then SerialPort1.Write("j")
-                        If ye5 = True Then SerialPort1.Write("k")
-                        If ye6 = True Then SerialPort1.Write("l")
-                        If ye7 = True Then SerialPort1.Write("m")
-                        If ye8 = True Then SerialPort1.Write("n")
-                        If ye9 = True Then SerialPort1.Write("o")
-                        If ye10 = True Then SerialPort1.Write("p")
+                        If sp = True Then If ye1 = True Then SerialPort1.Write("g")
+                        If sp = True Then If ye2 = True Then SerialPort1.Write("h")
+                        If sp = True Then If ye3 = True Then SerialPort1.Write("i")
+                        If sp = True Then If ye4 = True Then SerialPort1.Write("j")
+                        If sp = True Then If ye5 = True Then SerialPort1.Write("k")
+                        If sp = True Then If ye6 = True Then SerialPort1.Write("l")
+                        If sp = True Then If ye7 = True Then SerialPort1.Write("m")
+                        If sp = True Then If ye8 = True Then SerialPort1.Write("n")
+                        If sp = True Then If ye9 = True Then SerialPort1.Write("o")
+                        If sp = True Then If ye10 = True Then SerialPort1.Write("p")
 
                     Else
                         PictureBox1.Image = RaceControlManager.My.Resources.Black
-                        If ye1 = True Then SerialPort1.Write("g")
-                        If ye2 = True Then SerialPort1.Write("h")
-                        If ye3 = True Then SerialPort1.Write("i")
-                        If ye4 = True Then SerialPort1.Write("j")
-                        If ye5 = True Then SerialPort1.Write("k")
-                        If ye6 = True Then SerialPort1.Write("l")
-                        If ye7 = True Then SerialPort1.Write("m")
-                        If ye8 = True Then SerialPort1.Write("n")
-                        If ye9 = True Then SerialPort1.Write("o")
-                        If ye10 = True Then SerialPort1.Write("p")
+                        If sp = True Then If ye1 = True Then SerialPort1.Write("g")
+                        If sp = True Then If ye2 = True Then SerialPort1.Write("h")
+                        If sp = True Then If ye3 = True Then SerialPort1.Write("i")
+                        If sp = True Then If ye4 = True Then SerialPort1.Write("j")
+                        If sp = True Then If ye5 = True Then SerialPort1.Write("k")
+                        If sp = True Then If ye6 = True Then SerialPort1.Write("l")
+                        If sp = True Then If ye7 = True Then SerialPort1.Write("m")
+                        If sp = True Then If ye8 = True Then SerialPort1.Write("n")
+                        If sp = True Then If ye9 = True Then SerialPort1.Write("o")
+                        If sp = True Then If ye10 = True Then SerialPort1.Write("p")
                     End If
-                End If
+                    End If
             End If
         End If
     End Sub
@@ -423,28 +449,28 @@ Public Class Form1
                 dyellowState = Not dyellowState
                 If dyellowState = True Then
                     PictureBox1.Image = RaceControlManager.My.Resources.DoubleYellow1
-                    If dy1 = True Then SerialPort1.Write("g")
-                    If dy2 = True Then SerialPort1.Write("h")
-                    If dy3 = True Then SerialPort1.Write("i")
-                    If dy4 = True Then SerialPort1.Write("j")
-                    If dy5 = True Then SerialPort1.Write("k")
-                    If dy6 = True Then SerialPort1.Write("l")
-                    If dy7 = True Then SerialPort1.Write("m")
-                    If dy8 = True Then SerialPort1.Write("n")
-                    If dy9 = True Then SerialPort1.Write("o")
-                    If dy10 = True Then SerialPort1.Write("p")
+                    If sp = True Then If dy1 = True Then SerialPort1.Write("g")
+                    If sp = True Then If dy2 = True Then SerialPort1.Write("h")
+                    If sp = True Then If dy3 = True Then SerialPort1.Write("i")
+                    If sp = True Then If dy4 = True Then SerialPort1.Write("j")
+                    If sp = True Then If dy5 = True Then SerialPort1.Write("k")
+                    If sp = True Then If dy6 = True Then SerialPort1.Write("l")
+                    If sp = True Then If dy7 = True Then SerialPort1.Write("m")
+                    If sp = True Then If dy8 = True Then SerialPort1.Write("n")
+                    If sp = True Then If dy9 = True Then SerialPort1.Write("o")
+                    If sp = True Then If dy10 = True Then SerialPort1.Write("p")
                 Else
                     PictureBox1.Image = RaceControlManager.My.Resources.DoubleYellow2
-                    If dy1 = True Then SerialPort1.Write("g")
-                    If dy2 = True Then SerialPort1.Write("h")
-                    If dy3 = True Then SerialPort1.Write("i")
-                    If dy4 = True Then SerialPort1.Write("j")
-                    If dy5 = True Then SerialPort1.Write("k")
-                    If dy6 = True Then SerialPort1.Write("l")
-                    If dy7 = True Then SerialPort1.Write("m")
-                    If dy8 = True Then SerialPort1.Write("n")
-                    If dy9 = True Then SerialPort1.Write("o")
-                    If dy10 = True Then SerialPort1.Write("p")
+                    If sp = True Then If dy1 = True Then SerialPort1.Write("g")
+                    If sp = True Then If dy2 = True Then SerialPort1.Write("h")
+                    If sp = True Then If dy3 = True Then SerialPort1.Write("i")
+                    If sp = True Then If dy4 = True Then SerialPort1.Write("j")
+                    If sp = True Then If dy5 = True Then SerialPort1.Write("k")
+                    If sp = True Then If dy6 = True Then SerialPort1.Write("l")
+                    If sp = True Then If dy7 = True Then SerialPort1.Write("m")
+                    If sp = True Then If dy8 = True Then SerialPort1.Write("n")
+                    If sp = True Then If dy9 = True Then SerialPort1.Write("o")
+                    If sp = True Then If dy10 = True Then SerialPort1.Write("p")
                 End If
             End If
         End If
