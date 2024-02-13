@@ -58,8 +58,10 @@ Public Class Form1
         redState = Not redState
         If redState = True Then
             PictureBox1.Image = RaceControlManager.My.Resources.Red
+            If sp = True Then SerialPort1.Write("w")
         Else
             PictureBox1.Image = RaceControlManager.My.Resources.Black
+            If sp = True Then SerialPort1.Write("w")
         End If
     End Sub
 
@@ -484,7 +486,7 @@ Public Class Form1
                 If x = 20 Then
                     GreenTimer.Enabled = False
                     PictureBox1.Image = RaceControlManager.My.Resources.Black
-                    If sp = True Then SerialPort1.Write("z")ç
+                    If sp = True Then SerialPort1.Write("z")
                 ElseIf greenState = False Then
                     PictureBox1.Image = RaceControlManager.My.Resources.Black
                     If sp = True Then SerialPort1.Write("z")

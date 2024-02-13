@@ -57,6 +57,7 @@ bool s8=false;
 bool s9=false;
 bool s10=false;
 bool gt=false;
+bool red=false;
 
 void setup() {
   Serial.begin(9600); // abre el puerto serie, configura los datos a 9600 bps
@@ -246,6 +247,52 @@ void loop() {
       gt=true;
     }
     }
-
+    if(incomingByte=='w'){
+    digitalWrite(sector1R, LOW);
+    digitalWrite(sector1B, LOW);
+    digitalWrite(sector2R, LOW);
+    digitalWrite(sector2B, LOW);
+    digitalWrite(sector3R, LOW);
+    digitalWrite(sector3B, LOW);
+    digitalWrite(sector4R, LOW);
+    digitalWrite(sector4B, LOW);
+    digitalWrite(sector5R, LOW);
+    digitalWrite(sector5B, LOW);
+    digitalWrite(sector6R, LOW);
+    digitalWrite(sector6B, LOW);
+    digitalWrite(sector7R, LOW);
+    digitalWrite(sector7B, LOW);
+    digitalWrite(sector8R, LOW);
+    digitalWrite(sector8B, LOW);
+    digitalWrite(sector9R, LOW);
+    digitalWrite(sector9B, LOW);
+    digitalWrite(sector10R, LOW);
+    digitalWrite(sector10B, LOW);
+    if(red==true){
+      digitalWrite(sector1G, LOW);
+      digitalWrite(sector2G, LOW);
+      digitalWrite(sector3G, LOW);
+      digitalWrite(sector4G, LOW);
+      digitalWrite(sector5G, LOW);
+      digitalWrite(sector6G, LOW);
+      digitalWrite(sector7G, LOW);
+      digitalWrite(sector8G, LOW);
+      digitalWrite(sector9G, LOW);
+      digitalWrite(sector10G, LOW);
+      red=false;
+    }else{
+      digitalWrite(sector1G, HIGH);
+      digitalWrite(sector2G, HIGH);
+      digitalWrite(sector3G, HIGH);
+      digitalWrite(sector4G, HIGH);
+      digitalWrite(sector5G, HIGH);
+      digitalWrite(sector6G, HIGH);
+      digitalWrite(sector7G, HIGH);
+      digitalWrite(sector8G, HIGH);
+      digitalWrite(sector9G, HIGH);
+      digitalWrite(sector10G, HIGH);
+      red=true;
+    }
+    }
   }
 }
