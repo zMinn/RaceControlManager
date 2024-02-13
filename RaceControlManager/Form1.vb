@@ -484,11 +484,14 @@ Public Class Form1
                 If x = 20 Then
                     GreenTimer.Enabled = False
                     PictureBox1.Image = RaceControlManager.My.Resources.Black
+                    If sp = True Then SerialPort1.Write("z")ç
                 ElseIf greenState = False Then
                     PictureBox1.Image = RaceControlManager.My.Resources.Black
+                    If sp = True Then SerialPort1.Write("z")
                     x += 1
                 ElseIf greenState = True Then
                     PictureBox1.Image = RaceControlManager.My.Resources.Green
+                    If sp = True Then SerialPort1.Write("z")
                     x += 1
                 End If
             Else
