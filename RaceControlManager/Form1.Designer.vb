@@ -125,7 +125,6 @@ Partial Class Form1
         Me.y1.Name = "y1"
         Me.y1.Size = New System.Drawing.Size(31, 30)
         Me.y1.TabIndex = 4
-        Me.y1.Text = "Button3"
         Me.y1.UseVisualStyleBackColor = True
         '
         'ry1
@@ -134,7 +133,6 @@ Partial Class Form1
         Me.ry1.Name = "ry1"
         Me.ry1.Size = New System.Drawing.Size(31, 30)
         Me.ry1.TabIndex = 5
-        Me.ry1.Text = "Button4"
         Me.ry1.UseVisualStyleBackColor = True
         '
         'y3
@@ -143,7 +141,6 @@ Partial Class Form1
         Me.y3.Name = "y3"
         Me.y3.Size = New System.Drawing.Size(31, 30)
         Me.y3.TabIndex = 6
-        Me.y3.Text = "Button5"
         Me.y3.UseVisualStyleBackColor = True
         '
         'ry3
@@ -152,7 +149,6 @@ Partial Class Form1
         Me.ry3.Name = "ry3"
         Me.ry3.Size = New System.Drawing.Size(31, 30)
         Me.ry3.TabIndex = 7
-        Me.ry3.Text = "Button6"
         Me.ry3.UseVisualStyleBackColor = True
         '
         'y4
@@ -161,7 +157,6 @@ Partial Class Form1
         Me.y4.Name = "y4"
         Me.y4.Size = New System.Drawing.Size(31, 30)
         Me.y4.TabIndex = 8
-        Me.y4.Text = "Button7"
         Me.y4.UseVisualStyleBackColor = True
         '
         'y2
@@ -170,7 +165,6 @@ Partial Class Form1
         Me.y2.Name = "y2"
         Me.y2.Size = New System.Drawing.Size(31, 30)
         Me.y2.TabIndex = 9
-        Me.y2.Text = "Button8"
         Me.y2.UseVisualStyleBackColor = True
         '
         'ry4
@@ -179,7 +173,6 @@ Partial Class Form1
         Me.ry4.Name = "ry4"
         Me.ry4.Size = New System.Drawing.Size(31, 30)
         Me.ry4.TabIndex = 10
-        Me.ry4.Text = "Button9"
         Me.ry4.UseVisualStyleBackColor = True
         '
         'ry2
@@ -188,7 +181,6 @@ Partial Class Form1
         Me.ry2.Name = "ry2"
         Me.ry2.Size = New System.Drawing.Size(31, 30)
         Me.ry2.TabIndex = 11
-        Me.ry2.Text = "Button10"
         Me.ry2.UseVisualStyleBackColor = True
         '
         'y5
@@ -197,7 +189,6 @@ Partial Class Form1
         Me.y5.Name = "y5"
         Me.y5.Size = New System.Drawing.Size(31, 30)
         Me.y5.TabIndex = 12
-        Me.y5.Text = "Button11"
         Me.y5.UseVisualStyleBackColor = True
         '
         'ry5
@@ -206,7 +197,6 @@ Partial Class Form1
         Me.ry5.Name = "ry5"
         Me.ry5.Size = New System.Drawing.Size(31, 30)
         Me.ry5.TabIndex = 13
-        Me.ry5.Text = "Button12"
         Me.ry5.UseVisualStyleBackColor = True
         '
         'ry10
@@ -215,7 +205,6 @@ Partial Class Form1
         Me.ry10.Name = "ry10"
         Me.ry10.Size = New System.Drawing.Size(31, 30)
         Me.ry10.TabIndex = 23
-        Me.ry10.Text = "Button13"
         Me.ry10.UseVisualStyleBackColor = True
         '
         'y10
@@ -224,7 +213,6 @@ Partial Class Form1
         Me.y10.Name = "y10"
         Me.y10.Size = New System.Drawing.Size(31, 30)
         Me.y10.TabIndex = 22
-        Me.y10.Text = "Button14"
         Me.y10.UseVisualStyleBackColor = True
         '
         'ry7
@@ -233,7 +221,6 @@ Partial Class Form1
         Me.ry7.Name = "ry7"
         Me.ry7.Size = New System.Drawing.Size(31, 30)
         Me.ry7.TabIndex = 21
-        Me.ry7.Text = "Button15"
         Me.ry7.UseVisualStyleBackColor = True
         '
         'ry9
@@ -242,7 +229,6 @@ Partial Class Form1
         Me.ry9.Name = "ry9"
         Me.ry9.Size = New System.Drawing.Size(31, 30)
         Me.ry9.TabIndex = 20
-        Me.ry9.Text = "Button16"
         Me.ry9.UseVisualStyleBackColor = True
         '
         'y7
@@ -251,7 +237,6 @@ Partial Class Form1
         Me.y7.Name = "y7"
         Me.y7.Size = New System.Drawing.Size(31, 30)
         Me.y7.TabIndex = 19
-        Me.y7.Text = "Button17"
         Me.y7.UseVisualStyleBackColor = True
         '
         'y9
@@ -260,7 +245,6 @@ Partial Class Form1
         Me.y9.Name = "y9"
         Me.y9.Size = New System.Drawing.Size(31, 30)
         Me.y9.TabIndex = 18
-        Me.y9.Text = "Button18"
         Me.y9.UseVisualStyleBackColor = True
         '
         'ry8
@@ -269,7 +253,6 @@ Partial Class Form1
         Me.ry8.Name = "ry8"
         Me.ry8.Size = New System.Drawing.Size(31, 30)
         Me.ry8.TabIndex = 17
-        Me.ry8.Text = "Button19"
         Me.ry8.UseVisualStyleBackColor = True
         '
         'y8
@@ -278,7 +261,6 @@ Partial Class Form1
         Me.y8.Name = "y8"
         Me.y8.Size = New System.Drawing.Size(31, 30)
         Me.y8.TabIndex = 16
-        Me.y8.Text = "Button20"
         Me.y8.UseVisualStyleBackColor = True
         '
         'ry6
@@ -287,7 +269,6 @@ Partial Class Form1
         Me.ry6.Name = "ry6"
         Me.ry6.Size = New System.Drawing.Size(31, 30)
         Me.ry6.TabIndex = 15
-        Me.ry6.Text = "Button21"
         Me.ry6.UseVisualStyleBackColor = True
         '
         'y6
@@ -296,7 +277,6 @@ Partial Class Form1
         Me.y6.Name = "y6"
         Me.y6.Size = New System.Drawing.Size(31, 30)
         Me.y6.TabIndex = 14
-        Me.y6.Text = "Button22"
         Me.y6.UseVisualStyleBackColor = True
         '
         'TimerYellow
@@ -315,7 +295,6 @@ Partial Class Form1
         Me.g.Name = "g"
         Me.g.Size = New System.Drawing.Size(65, 30)
         Me.g.TabIndex = 24
-        Me.g.Text = "g1"
         Me.g.UseVisualStyleBackColor = True
         '
         'g2
@@ -324,7 +303,6 @@ Partial Class Form1
         Me.g2.Name = "g2"
         Me.g2.Size = New System.Drawing.Size(65, 30)
         Me.g2.TabIndex = 25
-        Me.g2.Text = "Button4"
         Me.g2.UseVisualStyleBackColor = True
         '
         'g3
@@ -333,7 +311,6 @@ Partial Class Form1
         Me.g3.Name = "g3"
         Me.g3.Size = New System.Drawing.Size(65, 30)
         Me.g3.TabIndex = 26
-        Me.g3.Text = "Button5"
         Me.g3.UseVisualStyleBackColor = True
         '
         'g4
@@ -342,7 +319,6 @@ Partial Class Form1
         Me.g4.Name = "g4"
         Me.g4.Size = New System.Drawing.Size(65, 30)
         Me.g4.TabIndex = 27
-        Me.g4.Text = "Button6"
         Me.g4.UseVisualStyleBackColor = True
         '
         'g5
@@ -351,7 +327,6 @@ Partial Class Form1
         Me.g5.Name = "g5"
         Me.g5.Size = New System.Drawing.Size(65, 30)
         Me.g5.TabIndex = 28
-        Me.g5.Text = "Button7"
         Me.g5.UseVisualStyleBackColor = True
         '
         'g10
@@ -360,7 +335,6 @@ Partial Class Form1
         Me.g10.Name = "g10"
         Me.g10.Size = New System.Drawing.Size(65, 30)
         Me.g10.TabIndex = 33
-        Me.g10.Text = "Button8"
         Me.g10.UseVisualStyleBackColor = True
         '
         'g9
@@ -369,7 +343,6 @@ Partial Class Form1
         Me.g9.Name = "g9"
         Me.g9.Size = New System.Drawing.Size(65, 30)
         Me.g9.TabIndex = 32
-        Me.g9.Text = "Button9"
         Me.g9.UseVisualStyleBackColor = True
         '
         'g8
@@ -378,7 +351,6 @@ Partial Class Form1
         Me.g8.Name = "g8"
         Me.g8.Size = New System.Drawing.Size(65, 30)
         Me.g8.TabIndex = 31
-        Me.g8.Text = "Button10"
         Me.g8.UseVisualStyleBackColor = True
         '
         'g7
@@ -387,7 +359,6 @@ Partial Class Form1
         Me.g7.Name = "g7"
         Me.g7.Size = New System.Drawing.Size(65, 30)
         Me.g7.TabIndex = 30
-        Me.g7.Text = "Button11"
         Me.g7.UseVisualStyleBackColor = True
         '
         'g6
@@ -396,7 +367,6 @@ Partial Class Form1
         Me.g6.Name = "g6"
         Me.g6.Size = New System.Drawing.Size(65, 30)
         Me.g6.TabIndex = 29
-        Me.g6.Text = "Button12"
         Me.g6.UseVisualStyleBackColor = True
         '
         'GreenTimer
