@@ -1,0 +1,26 @@
+a --> Llum 1
+b --> Llum 2
+c --> Llum 3
+d --> Llum 4 
+e --> Llum 5
+f --> Lights Off
+g --> Yellow s1
+h --> Yellow s2
+i --> Yellow s3
+j --> Yellow s4
+k --> Yellow s5 
+l --> Yellow s6
+m --> Yellow s7
+n --> Yellow s8
+o --> Yellow s9
+p --> Yellow s10
+q
+r
+s
+t
+u
+v
+w --> RedFlag on/off
+x
+y --> All off
+z --> Green on/off
