@@ -67,6 +67,28 @@ void loop() {
   // Starting Lights
   if (Serial.available() > 0) {
     char incomingByte = Serial.read();
+    if(incomingByte=='y'){ // Starting lights Procedure light 1
+          digitalWrite(sector1R, LOW);
+      digitalWrite(sector1B, LOW);
+      digitalWrite(sector2R, LOW);
+      digitalWrite(sector2B, LOW);
+      digitalWrite(sector3R, LOW);
+      digitalWrite(sector3B, LOW);
+      digitalWrite(sector4R, LOW);
+      digitalWrite(sector4B, LOW);
+      digitalWrite(sector5R, LOW);
+      digitalWrite(sector5B, LOW);
+      digitalWrite(sector6R, LOW);
+      digitalWrite(sector6B, LOW);
+      digitalWrite(sector7R, LOW);
+      digitalWrite(sector7B, LOW);
+      digitalWrite(sector8R, LOW);
+      digitalWrite(sector8B, LOW);
+      digitalWrite(sector9R, LOW);
+      digitalWrite(sector9B, LOW);
+      digitalWrite(sector10R, LOW);
+      digitalWrite(sector10B, LOW);
+      }
     if(incomingByte=='a'){ // Starting lights Procedure light 1
       digitalWrite(lights1, HIGH);
       }
@@ -82,7 +104,7 @@ void loop() {
     if(incomingByte=='e'){ // Starting lights Procedure lights 1,2,3,4,5
       digitalWrite(lights5, HIGH);
       }
-    if(incomingByte=='f'){ // Starting lights Procedure lights 1,2,3,4,5
+    if(incomingByte=='f'){ // Starting lights Procedure lights off
       digitalWrite(lights1, LOW);
       digitalWrite(lights2, LOW);
       digitalWrite(lights3, LOW);

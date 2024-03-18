@@ -345,6 +345,12 @@ Public Class Form1
             ry1.BackColor = Color.White : ry2.BackColor = Color.White : ry3.BackColor = Color.White : ry4.BackColor = Color.White : ry5.BackColor = Color.White : ry6.BackColor = Color.White : ry7.BackColor = Color.White : ry8.BackColor = Color.White : ry9.BackColor = Color.White : ry10.BackColor = Color.White
             TimerSC.Enabled = True
             PictureBox2.Image = RaceControlManager.My.Resources.fcy
+            If sp = True Then If ye1 = True Then SerialPort1.Write("g")
+            If sp = True Then If ye3 = True Then SerialPort1.Write("i")
+            If sp = True Then If ye5 = True Then SerialPort1.Write("k")
+            If sp = True Then If ye7 = True Then SerialPort1.Write("m")
+            If sp = True Then If ye9 = True Then SerialPort1.Write("o")
+
             TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " SAFETY CAR HAS BEEN DEPLOYED " & Environment.NewLine)
         End If
     End Sub
@@ -369,8 +375,29 @@ Public Class Form1
             scState = Not scState
             If scState = True Then
                 PictureBox1.Image = RaceControlManager.My.Resources.SC1
+                If sp = True Then If ye1 = True Then SerialPort1.Write("g")
+                If sp = True Then If ye2 = True Then SerialPort1.Write("h")
+                If sp = True Then If ye3 = True Then SerialPort1.Write("i")
+                If sp = True Then If ye4 = True Then SerialPort1.Write("j")
+                If sp = True Then If ye5 = True Then SerialPort1.Write("k")
+                If sp = True Then If ye6 = True Then SerialPort1.Write("l")
+                If sp = True Then If ye7 = True Then SerialPort1.Write("m")
+                If sp = True Then If ye8 = True Then SerialPort1.Write("n")
+                If sp = True Then If ye9 = True Then SerialPort1.Write("o")
+                If sp = True Then If ye10 = True Then SerialPort1.Write("p")
+
             Else
                 PictureBox1.Image = RaceControlManager.My.Resources.SC2
+                If sp = True Then If ye1 = True Then SerialPort1.Write("g")
+                If sp = True Then If ye2 = True Then SerialPort1.Write("h")
+                If sp = True Then If ye3 = True Then SerialPort1.Write("i")
+                If sp = True Then If ye4 = True Then SerialPort1.Write("j")
+                If sp = True Then If ye5 = True Then SerialPort1.Write("k")
+                If sp = True Then If ye6 = True Then SerialPort1.Write("l")
+                If sp = True Then If ye7 = True Then SerialPort1.Write("m")
+                If sp = True Then If ye8 = True Then SerialPort1.Write("n")
+                If sp = True Then If ye9 = True Then SerialPort1.Write("o")
+                If sp = True Then If ye10 = True Then SerialPort1.Write("p")
             End If
         End If
     End Sub
@@ -515,7 +542,7 @@ Public Class Form1
         TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " ALL FLAGS HAVE BEEN REMOVED " & Environment.NewLine)
         PictureBox1.Image = RaceControlManager.My.Resources.Black
         PictureBox2.Image = RaceControlManager.My.Resources.Layout
-
+        If sp = True Then SerialPort1.Write("y")
         ye1 = False : ye2 = False : ye3 = False : ye4 = False : ye5 = False : ye6 = False : ye7 = False : ye8 = False : ye9 = False : ye10 = False
         dy1 = False : dy2 = False : dy3 = False : dy4 = False : dy5 = False : dy6 = False : dy7 = False : dy8 = False : dy9 = False : dy10 = False
         y1.BackColor = Color.White : y2.BackColor = Color.White : y3.BackColor = Color.White : y4.BackColor = Color.White : y5.BackColor = Color.White : y6.BackColor = Color.White : y7.BackColor = Color.White : y8.BackColor = Color.White : y9.BackColor = Color.White : y10.BackColor = Color.White
