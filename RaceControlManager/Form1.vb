@@ -257,7 +257,6 @@ Public Class Form1
         ye1 = False : dy1 = False : y1.BackColor = Color.White : ry1.BackColor = Color.White
         x = 0
         greenState = True
-        If sp = True Then SerialPort1.Write("z")
         GreenTimer.Enabled = True
         greenState = 0
         TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " CLEAR IN SECTOR 1" & Environment.NewLine)
@@ -375,29 +374,11 @@ Public Class Form1
             scState = Not scState
             If scState = True Then
                 PictureBox1.Image = RaceControlManager.My.Resources.SC1
-                If sp = True Then If ye1 = True Then SerialPort1.Write("g")
-                If sp = True Then If ye2 = True Then SerialPort1.Write("h")
-                If sp = True Then If ye3 = True Then SerialPort1.Write("i")
-                If sp = True Then If ye4 = True Then SerialPort1.Write("j")
-                If sp = True Then If ye5 = True Then SerialPort1.Write("k")
-                If sp = True Then If ye6 = True Then SerialPort1.Write("l")
-                If sp = True Then If ye7 = True Then SerialPort1.Write("m")
-                If sp = True Then If ye8 = True Then SerialPort1.Write("n")
-                If sp = True Then If ye9 = True Then SerialPort1.Write("o")
-                If sp = True Then If ye10 = True Then SerialPort1.Write("p")
+                If sp = True Then SerialPort1.Write("x")
 
             Else
                 PictureBox1.Image = RaceControlManager.My.Resources.SC2
-                If sp = True Then If ye1 = True Then SerialPort1.Write("g")
-                If sp = True Then If ye2 = True Then SerialPort1.Write("h")
-                If sp = True Then If ye3 = True Then SerialPort1.Write("i")
-                If sp = True Then If ye4 = True Then SerialPort1.Write("j")
-                If sp = True Then If ye5 = True Then SerialPort1.Write("k")
-                If sp = True Then If ye6 = True Then SerialPort1.Write("l")
-                If sp = True Then If ye7 = True Then SerialPort1.Write("m")
-                If sp = True Then If ye8 = True Then SerialPort1.Write("n")
-                If sp = True Then If ye9 = True Then SerialPort1.Write("o")
-                If sp = True Then If ye10 = True Then SerialPort1.Write("p")
+                If sp = True Then SerialPort1.Write("x")
             End If
         End If
     End Sub
@@ -431,6 +412,7 @@ Public Class Form1
             PictureBox3.Image = RaceControlManager.My.Resources.Lights0
             TextBox1.AppendText(DateTime.Now.ToString("HH:mm:ss") & " GREEN FLAG" & Environment.NewLine)
             If sp = True Then SerialPort1.Write("f")
+            x = 1
             startTimer.Enabled = False
             GreenTimer.Enabled = True
         End If
@@ -514,6 +496,7 @@ Public Class Form1
                     GreenTimer.Enabled = False
                     PictureBox1.Image = RaceControlManager.My.Resources.Black
                     If sp = True Then SerialPort1.Write("z")
+                    If sp = True Then SerialPort1.Write("y")
                 ElseIf greenState = False Then
                     PictureBox1.Image = RaceControlManager.My.Resources.Black
                     If sp = True Then SerialPort1.Write("z")
@@ -525,6 +508,7 @@ Public Class Form1
                 End If
             Else
                 GreenTimer.Enabled = False
+                If sp = True Then SerialPort1.Write("y")
             End If
         End If
 

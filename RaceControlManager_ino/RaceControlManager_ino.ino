@@ -1,4 +1,10 @@
 //Correcte!! Chippi
+#include <Adafruit_NeoPixel.h>
+
+#define PIN 12
+#define NUMPIXELS 10
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+
 int incomingByte = 0;
 const int lights1 = 2;  
 const int lights2 = 3;  

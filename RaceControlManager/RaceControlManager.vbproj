@@ -154,9 +154,6 @@
     <None Include="Resources\Red.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\SC1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\SC2.png" />
   </ItemGroup>
   <ItemGroup>
@@ -199,9 +196,6 @@
     <None Include="Resources\Layout10.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\fcy.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
@@ -233,6 +227,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Lights5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SC1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fcy.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
