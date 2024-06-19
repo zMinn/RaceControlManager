@@ -54,16 +54,7 @@ Public Class Form1
         y1.BackColor = Color.White : y2.BackColor = Color.White : y3.BackColor = Color.White : y4.BackColor = Color.White : y5.BackColor = Color.White : y6.BackColor = Color.White : y7.BackColor = Color.White : y8.BackColor = Color.White : y9.BackColor = Color.White : y10.BackColor = Color.White
         ry1.BackColor = Color.White : ry2.BackColor = Color.White : ry3.BackColor = Color.White : ry4.BackColor = Color.White : ry5.BackColor = Color.White : ry6.BackColor = Color.White : ry7.BackColor = Color.White : ry8.BackColor = Color.White : ry9.BackColor = Color.White : ry10.BackColor = Color.White
     End Sub
-    Private Sub TimerRed_Tick(sender As Object, e As EventArgs) Handles TimerRed.Tick
-        redState = Not redState
-        If redState = True Then
-            PictureBox1.Image = RaceControlManager.My.Resources.Red
-            If sp = True Then SerialPort1.Write("w")
-        Else
-            PictureBox1.Image = RaceControlManager.My.Resources.Black
-            If sp = True Then SerialPort1.Write("w")
-        End If
-    End Sub
+
 
 
 
@@ -450,10 +441,23 @@ Public Class Form1
                         If sp = True Then If ye9 = True Then SerialPort1.Write("o")
                         If sp = True Then If ye10 = True Then SerialPort1.Write("p")
                     End If
-                    End If
+                End If
             End If
         End If
     End Sub
+    Private Sub TimerRed_Tick(sender As Object, e As EventArgs) Handles TimerRed.Tick
+        redState = Not redState
+        If redState = True Then
+            PictureBox1.Image = RaceControlManager.My.Resources.Red
+            If sp = True Then SerialPort1.Write("w")
+        Else
+            PictureBox1.Image = RaceControlManager.My.Resources.Black
+            If sp = True Then SerialPort1.Write("w")
+        End If
+    End Sub
+
+
+
     Private Sub DYellow_Tick(sender As Object, e As EventArgs) Handles DYellow.Tick
         If TimerRed.Enabled = False Then
             If dy1 = True Or dy2 = True Or dy3 = True Or dy4 = True Or dy5 = True Or dy6 = True Or dy7 = True Or dy8 = True Or dy9 = True Or dy10 = True Then

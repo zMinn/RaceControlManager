@@ -42,11 +42,11 @@ void loop() {
   }
       }
     if(incomingByte=='a'){ // Starting lights Procedure light 1
-      pixels.setPixelColor(0, red);
+      pixels.setPixelColor(4, red);
       pixels.show(); 
       }
     if(incomingByte=='b'){ // Starting lights Procedure lights 1,2
-      pixels.setPixelColor(1, red);
+      pixels.setPixelColor(3, red);
       pixels.show(); 
       }
     if(incomingByte=='c'){ // Starting lights Procedure lights 1,2,3
@@ -54,11 +54,11 @@ void loop() {
       pixels.show(); 
       }
     if(incomingByte=='d'){ // Starting lights Procedure lights 1,2,3,4
-      pixels.setPixelColor(3, red);
+      pixels.setPixelColor(1, red);
       pixels.show(); 
       }
     if(incomingByte=='e'){ // Starting lights Procedure lights 1,2,3,4,5
-      pixels.setPixelColor(4, red);
+      pixels.setPixelColor(0, red);
       pixels.show(); 
       }
     if(incomingByte=='f'){ // Starting lights Procedure lights off
@@ -202,25 +202,26 @@ for(int i=5;i<NUMPIXELS;i++){
 
 
 
-    if(incomingByte=='w'){
+        if(incomingByte=='w'){
 for(int i=0;i<NUMPIXELS;i++){
     pixels.setPixelColor(i, 0,0,0); // Blank
     pixels.show();   
   }
-    if(red==true){
+    if(sc==true){
 for(int i=5;i<NUMPIXELS;i++){
     pixels.setPixelColor(i, red); // Blank
     pixels.show();   
   }
-      red=false;
+      sc=false;
     }else{
 for(int i=5;i<NUMPIXELS;i++){
-    pixels.setPixelColor(i, 0,0,0); // Blank
-    pixels.show();   
+    pixels.setPixelColor(i, 0,0,0); // Green
+    pixels.show();  
   }
-      red=true;
+      sc=true;
     }
     }
+
 //SC
 
         if(incomingByte=='x'){
